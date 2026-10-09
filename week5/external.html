@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #details {
+            display: none;
+        }
+
+        #colorBox {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1 id="title">Welcome to Intro to JavaScript</h1>
+
+    <div id="colorBox"></div>
+
+    <div id="details">
+        Some more details about something...
+    </div>
+
+    <script>
+
+        // Create a referances to the h1#title and div#details elements
+        //CSS: #title
+        var h1 = document.getElementById("title");
+        var details = document.getElementById("details");
+        var colorBox = document.getElementById("colorBox");
+        // details.style.display = "none";
+
+        //Listen for a click event
+        h1.addEventListener("click", function(){
+
+            //Change the background property
+            h1.style.backgroundColor = "lightblue";
+            details.style.display = "block";
+
+        });
+
+        var isBlue = false;
+
+        colorBox.addEventListener("click", function(){
+            if (isBlue) {
+                colorBox.style.backgroundColor = "red";
+            } else {
+                colorBox.style.backgroundColor = "blue";
+            }
+
+            isBlue = !isBlue;
+        });
+
+    </script>
+
+</body>
+</html>
